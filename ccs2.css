@@ -1,0 +1,145 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: radial-gradient(ellipse at top, #24503d 0%, #173628 55%, #0f2a1f 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    color: #1c2b24;
+}
+
+.container { width: 100%; max-width: 30rem; }
+
+.header { text-align: center; margin-bottom: 2.25rem; }
+
+.title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 3.25rem;
+    font-weight: 400;
+    color: #f6f1e7;
+    letter-spacing: 0.18em;
+    line-height: 1.1;
+}
+
+.divider {
+    width: 5rem;
+    height: 1px;
+    background: #c9a96e;
+    margin: 1.25rem auto 0;
+    position: relative;
+}
+.divider::after {
+    content: "";
+    position: absolute;
+    left: 50%; top: 50%;
+    width: 7px; height: 7px;
+    background: #c9a96e;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.bank-card {
+    background: #fbfaf6;
+    border-radius: 20px;
+    padding: 2rem 1.75rem;
+    box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(201, 169, 110, 0.35);
+}
+
+.bank-section-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #9a7b45;
+    margin-bottom: 0.9rem;
+}
+
+.bank-item { margin-bottom: 1.75rem; }
+.bank-item:last-child { margin-bottom: 0; }
+
+.bank-header { display: flex; align-items: center; gap: 1rem; }
+
+.logo-container {
+    width: 3.5rem;
+    height: 3.5rem;
+    flex-shrink: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.25);
+}
+
+.bank-logo { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.account-details { flex: 1; min-width: 0; }
+
+.account-name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: #173628;
+    margin-bottom: 0.15rem;
+}
+
+.account-row { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
+
+.account-number {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #1c2b24;
+    letter-spacing: 0.08em;
+    font-variant-numeric: tabular-nums;
+}
+
+.copy-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    border: 1px solid #d9d2c1;
+    background: transparent;
+    color: #24503d;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.copy-btn:hover { background: #24503d; color: #f6f1e7; border-color: #24503d; }
+
+.divider-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #e3dccb, transparent);
+    margin-top: 1.75rem;
+}
+
+.footer { text-align: center; margin-top: 2rem; }
+.footer-text { font-size: 0.9rem; color: rgba(246, 241, 231, 0.7); }
+
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translate(-50%, 1rem);
+    background: #173628;
+    color: #f6f1e7;
+    padding: 0.85rem 1.4rem;
+    border-radius: 999px;
+    border: 1px solid rgba(201, 169, 110, 0.5);
+    box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 1000;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+.toast-content { display: flex; gap: 0.5rem; align-items: baseline; }
+.toast-title { font-weight: 600; font-size: 0.9rem; color: #c9a96e; }
+.toast-message { font-size: 0.9rem; letter-spacing: 0.05em; }
+
+@media (max-width: 480px) {
+    .title { font-size: 2.5rem; }
+    .bank-card { padding: 1.5rem 1.25rem; }
+    .account-number { font-size: 1.15rem; }
+}
